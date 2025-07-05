@@ -1,0 +1,73 @@
+/* === Expanded sidebar (default) === */
+
+.sidebar {
+  width: 240px;
+  background-color: #1e293b;
+  padding: 2rem 1rem;
+  color: #e0e7ff;
+  min-height: 100vh;
+  transition: width 0.3s ease;
+  box-sizing: border-box;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  padding: 2rem 0.5rem;
+  overflow: hidden;
+}
+
+.sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;        /* ✅ Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  display: block;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  color: #0ea5e9;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Fix spacing and center icons in collapsed mode */
+.sidebar.collapsed ul {
+  padding: 0;
+}
+
+.sidebar.collapsed li {
+  text-align: center;
+  margin: 1.2rem 0;
+}
+
+/* Adjust link appearance in collapsed mode */
+.sidebar.collapsed a {
+  font-size: 1.6rem;
+  display: block;
+  padding: 0.4rem;
+  color: #93c5fd;
+}
+
+.sidebar.collapsed a:hover {
+  color: #0ea5e9;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+

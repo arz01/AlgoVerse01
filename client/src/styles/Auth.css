@@ -1,0 +1,69 @@
+.auth-container {
+  width: 360px;
+  margin: 180px auto;
+  background-color: #1e293b; /* Keep this */
+  padding: 2.5rem;
+  border-radius: 12px;
+  color: #e0e7ff;
+  box-shadow: 0 4px 15px rgba(100, 116, 139, 0.6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.auth-container:hover {
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.7);
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #e0e7ff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  background-color: #1e293b;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover {
+  background-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.6);
+}
+
+.toggle {
+  margin-top: 18px;
+  color: #facc15;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.toggle:hover {
+  color: #eab308;
+}
+
+.msg {
+  text-align: center;
+  color: #f43f5e;
+  font-weight: 600;
+  margin-top: 12px;
+}
