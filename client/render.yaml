@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: algoverse-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false 
