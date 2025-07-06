@@ -13,6 +13,8 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/gemini", require("./routes/geminiRoutes"));
+app.use("/api/codeforces", require("./routes/codeforcesRoutes"));
+app.use("/api/leaderboard", require("./routes/leaderboardRoutes"));
 
 
 const PORT = process.env.PORT || 5000;

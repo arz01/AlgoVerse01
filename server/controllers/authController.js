@@ -45,8 +45,52 @@ exports.loginUser = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        codeforcesHandle: user.codeforcesHandle,
       },
     });
+  } catch (err) {
+    res.status(500).json({ msg: "Server error" });
+  }
+};
+
+exports.updateCodeforcesHandle = async (req, res) => {
+  const { codeforcesHandle } = req.body;
+  const userId = req.user.id;
+
+  try {
+    if (!codeforcesHandle || codeforcesHandle.trim() === '') {
+      return res.status(400).json({ msg: "Codeforces handle is required" });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { codeforcesHandle: codeforcesHandle.trim() },
+      { new: true }
+    );
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    res.json({
+      msg: "Codeforces handle updated successfully",
+      codeforcesHandle: user.codeforcesHandle,
+    });
+  } catch (err) {
+    res.status(500).json({ msg: "Server error" });
+  }
+};
+
+exports.getUserProfile = async (req, res) => {
+  const userId = req.user.id;
+
+  try {
+    const user = await User.findById(userId).select('-password');
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    res.json({ user });
   } catch (err) {
     res.status(500).json({ msg: "Server error" });
   }

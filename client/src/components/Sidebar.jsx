@@ -15,11 +15,11 @@ function Sidebar() {
         {collapsed ? "➡️" : "⬅️"}
       </button>
 
-      {!collapsed && <h2>DS Visualizer</h2>}
+      {!collapsed && <h2>AlgoVerse</h2>}
 
       <ul>
         <li><Link to="/dashboard">{collapsed ? "🏠" : "🏠 Home"}</Link></li>
-        <li><Link to="/progress">{collapsed ? "📈" : "📈 Progress Chart"}</Link></li>
+        <li><Link to="/analytics">{collapsed ? "📊" : "📊 Analytics"}</Link></li>
         <li><Link to="/leaderboard">{collapsed ? "🏆" : "🏆 Leaderboard"}</Link></li>
         <li><Link to="/help">{collapsed ? "❓" : "❓ Help / FAQs"}</Link></li>
         <li><Link to="/authors">{collapsed ? "👨‍💻" : "👨‍💻 Authors"}</Link></li>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./GeminiChat.css";
+import "../styles/GeminiChat.css";
 
 function GeminiChat() {
   const [open, setOpen] = useState(false);
@@ -35,26 +35,26 @@ function GeminiChat() {
 
   return (
     <div>
-      <button className="chat-toggle" onClick={toggleChat}>
+      <button className="gc-float" onClick={toggleChat}>
         <img src="/assets/gemini-logo.png" alt="Gemini" />
       </button>
 
       {open && (
-        <div className="chat-box">
-          <div className="chat-header">
+        <div className="gc-window">
+          <div className="gc-header">
             <strong>Gemini Assistant</strong>
-            <button onClick={toggleChat}>✖</button>
+            <span onClick={toggleChat}>✖</span>
           </div>
 
-          <div className="chat-messages">
+          <div className="gc-box">
             {messages.map((msg, idx) => (
-              <div key={idx} className={`chat-msg ${msg.role}`}>
+              <div key={idx} className={`gc-msg ${msg.role}`}>
                 {msg.text}
               </div>
             ))}
           </div>
 
-          <div className="chat-input">
+          <div className="gc-input">
             <input
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}

@@ -3,10 +3,23 @@ import { useNavigate } from "react-router-dom";
 
 function Card({ title, image, description }) {
   const navigate = useNavigate();
+  
+  const getTopicKey = (title) => {
+    const topicMap = {
+      "Implementation": "implementation",
+      "Dynamic Programming": "dp",
+      "Data Structures": "datastructures",
+      "Algorithms": "algorithms",
+      "Mathematics": "math",
+      "Graph Theory": "graphtheory"
+    };
+    return topicMap[title] || title.toLowerCase().replace(/\s+/g, '-');
+  };
+
   return (
     <div
       className="card"
-      onClick={() => navigate(`/visualizer/${title.toLowerCase()}`)}
+      onClick={() => navigate(`/topic/${getTopicKey(title)}`)}
       tabIndex={0}
     >
       <img src={`/assets/${image}`} alt={title} />

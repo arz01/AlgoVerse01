@@ -14,7 +14,13 @@ router.post("/chat", async (req, res) => {
     const result = await model.generateContent(prompt);
     const text = result.response.text();
 
-    res.json({ reply: text });
+    // ✅ Truncate to 100 words
+    const limitWords = (text, maxWords = 100) =>
+      text.split(" ").slice(0, maxWords).join(" ");
+
+    const trimmedText = limitWords(text);
+
+    res.json({ reply: trimmedText });
   } catch (error) {
     console.error("Gemini API error:", error.message);
     res.status(500).json({ msg: "Gemini API call failed" });
