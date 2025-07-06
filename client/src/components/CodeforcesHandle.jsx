@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/CodeforcesHandle.css";
+import { API_URL } from "../config";
 
 function CodeforcesHandle() {
   const [handle, setHandle] = useState("");
@@ -17,7 +18,7 @@ function CodeforcesHandle() {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const response = await fetch("http://localhost:5000/api/auth/profile", {
+      const response = await fetch(`${API_URL}/api/auth/profile`, {
         headers: {
           "x-auth-token": token,
         },
@@ -43,7 +44,7 @@ function CodeforcesHandle() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/auth/codeforces-handle", {
+      const response = await fetch(`${API_URL}/api/auth/codeforces-handle`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

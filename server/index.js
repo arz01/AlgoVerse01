@@ -7,7 +7,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-frontend-domain.railway.app', 'https://your-custom-domain.com']
+    : 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes

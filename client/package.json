@@ -1,6 +1,7 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "algoverse-client",
+  "version": "1.0.0",
+  "description": "Frontend for AlgoVerse competitive programming analytics platform",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -36,5 +37,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "competitive-programming",
+    "analytics",
+    "codeforces",
+    "react",
+    "frontend"
+  ],
+  "author": "AlgoVerse Team",
+  "license": "MIT"
 }

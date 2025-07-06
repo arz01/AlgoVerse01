@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/GeminiChat.css";
+import { API_URL } from "../config";
 
 function GeminiChat() {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ function GeminiChat() {
     setPrompt("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/gemini/chat", {
+      const res = await fetch(`${API_URL}/api/gemini/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

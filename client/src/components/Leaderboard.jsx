@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Leaderboard.css";
+import { API_URL } from "../config";
 
 function Leaderboard() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Leaderboard() {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const response = await fetch("http://localhost:5000/api/auth/profile", {
+              const response = await fetch(`${API_URL}/api/auth/profile`, {
         headers: {
           "x-auth-token": token,
         },
@@ -45,7 +46,7 @@ function Leaderboard() {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/leaderboard", {
+              const response = await fetch(`${API_URL}/api/leaderboard`, {
         headers: {
           "x-auth-token": token,
         },

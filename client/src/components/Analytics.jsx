@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Analytics.css";
+import { API_URL } from "../config";
 
 function Analytics() {
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ function Analytics() {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/auth/profile", {
+      const response = await fetch(`${API_URL}/api/auth/profile`, {
         headers: {
           "x-auth-token": token,
         },
@@ -78,7 +79,7 @@ function Analytics() {
       setLoading(true);
       const token = localStorage.getItem("token");
       
-      const response = await fetch(`http://localhost:5000/api/codeforces/${userHandle}/summary`, {
+      const response = await fetch(`${API_URL}/api/codeforces/${userHandle}/summary`, {
         headers: {
           "x-auth-token": token,
         },

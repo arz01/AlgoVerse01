@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
+import { API_URL } from "../config";
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -17,8 +18,8 @@ function AuthPage() {
     setMsg("");
 
     const url = isLogin
-      ? "http://localhost:5000/api/auth/login"
-      : "http://localhost:5000/api/auth/register";
+              ? `${API_URL}/api/auth/login`
+        : `${API_URL}/api/auth/register`;
 
     const body = isLogin
       ? { email: form.email, password: form.password }

@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Card from "../components/Card";
 import GeminiChat from "../components/GeminiChat";
 import CodeforcesHandle from "../components/CodeforcesHandle";
+import { API_URL } from "../config";
 
 const codeforcesTopics = [
     {
@@ -59,7 +60,7 @@ function Dashboard() {
     const fetchUserProfile = async () => {
         try {
             const token = localStorage.getItem("token");
-            const response = await fetch("http://localhost:5000/api/auth/profile", {
+            const response = await fetch(`${API_URL}/api/auth/profile`, {
                 headers: {
                     "x-auth-token": token,
                 },
@@ -81,7 +82,7 @@ function Dashboard() {
         try {
             setLoading(true);
             const token = localStorage.getItem("token");
-            const response = await fetch(`http://localhost:5000/api/codeforces/${handle}/summary`, {
+            const response = await fetch(`${API_URL}/api/codeforces/${handle}/summary`, {
                 headers: {
                     "x-auth-token": token,
                 },
