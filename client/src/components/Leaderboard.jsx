@@ -118,6 +118,13 @@ function Leaderboard() {
         <p>Rankings based on Codeforces performance and problem-solving skills</p>
       </div>
 
+      {/* Show warning if not all users are loaded */}
+      {leaderboardData.length > 0 && leaderboardData.length < 10 && (
+        <div className="leaderboard-warning">
+          <p>⚠️ Leaderboard isn't loaded completely, refresh 2-3 times for full leaderboard.</p>
+        </div>
+      )}
+
       <div className="scoring-info">
         <h3>📊 Scoring System</h3>
         <div className="scoring-details">
